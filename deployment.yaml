@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-eater
+spec:
+  replicas: 100 # Số replicas lớn để chắc chắn cần nhiều hơn 1 node
+  selector:
+    matchLabels:
+      app: cpu-eater
+  template:
+    metadata:
+      labels:
+        app: cpu-eater
+    spec:
+      containers:
+      - name: cpu-eater
+        image: nginx
+        resources:
+          requests:
+            cpu: "500m" # Yêu cầu 0.5 core CPU
