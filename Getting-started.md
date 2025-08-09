@@ -189,9 +189,9 @@ Việc cấu hình Cluster Autoscaler cho CAPI chủ yếu được thực hiệ
 
 **Ghi chú quan trọng:**
 
-* CA **chỉ** quan tâm tới các scalable resources có **cả** `min-size` và `max-size` annotation. Nếu thiếu một trong hai, CA sẽ **không** quản lý group đó. ([cluster-api.sigs.k8s.io][1])
-* Nếu provider hỗ trợ **native scale-from-zero**, bạn **không** cần capacity annotations — nhưng nhiều provider *chưa* hỗ trợ; trong trường hợp provider *không* hỗ trợ, phải dùng `capacity.*` để CA biết mô phỏng node khi nodegroup = 0. ([cluster-api.sigs.k8s.io][1])
-* Một số annotation (per-nodeGroup autoscaling-options) **ghi đè** các flags global (rất hữu ích khi 1 nhóm cần policy khác). ([cluster-api.sigs.k8s.io][1])
+* CA **chỉ** quan tâm tới các scalable resources có **cả** `min-size` và `max-size` annotation. Nếu thiếu một trong hai, CA sẽ **không** quản lý group đó.
+* Nếu provider hỗ trợ **native scale-from-zero**, bạn **không** cần capacity annotations — nhưng nhiều provider *chưa* hỗ trợ; trong trường hợp provider *không* hỗ trợ, phải dùng `capacity.*` để CA biết mô phỏng node khi nodegroup = 0.
+* Một số annotation (per-nodeGroup autoscaling-options) **ghi đè** các flags global (rất hữu ích khi 1 nhóm cần policy khác).
 
 
 Dưới đây là phân tích các tham số quan trọng nhất.
